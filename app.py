@@ -23,5 +23,5 @@ if __name__ == "__main__":
         # Obtener la variable de entorno APP_HOSTNAME en el formato por defecto (str)
         hostname=app.env("APP_HOSTNAME"),
         # Obtener la variable de entorno APP_PORT en formato númerico. De no existir, retorna 1801.
-        port=app.env.int("APP_PORT", 1801),
+        port=app.env.int("APP_PORT", 1801)
     )
