@@ -10,7 +10,6 @@ from services.users import users
 def get_by_id(req: Request, res: Response, next: Next):
     """Obtener un usuario por su identificador"""
 
-    """Obtener un usuario en base a su id"""
     user = users.get_by_id_db(req.param("id", callback=int))
 
     """Transformar información de respuesta"""
