@@ -10,10 +10,12 @@ import controllers.users as users
 router = Router()
 
 """Definir las rutas de la apliación"""
-router\
-    .get("/", lambda res, req, next: req.ok({u"msg": "Hello world!"})) \
-    .post("/", lambda res, req, next: req.ok({u"msg": "Hello world!"}))
+router \
+    .get("/", lambda req, res, next: res.ok({"msg": "Hello world! - HTTP GET"})) \
+    .post("/", lambda req, res, next: res.ok({"msg": "Hello world! - HTTP POST"})) \
+    .put("/", lambda req, res, next: res.send({"msg": "Hello world! - HTTP PUT"})) \
+    .delete("/", lambda req, res, next: res.send({"msg": "Hello world! - HTTP DELETE"}))
+
 
 """Definir las rutas de la apliación - users"""
-router\
-    .get("/users/:id", users.get_by_id)
+router.get("/users/:id", users.get_by_id)
